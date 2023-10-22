@@ -49,11 +49,11 @@ public class CodeExercisePostTest {
 
     }
 
-    // Validate if totalCount is above 1  to assure that se
+
     @Test
     public void testSearch(){
         Assert.assertNotNull(response.jsonPath(), "Response is returned as null"); // Validate response not null
-        Assert.assertEquals(response.jsonPath().get("currencyCode"),"SAR", "Incorrect currency returned"); // Validate base path is returned
-        Assert.assertTrue((int) response.jsonPath().get("totalCount") >= 1, "totalCount is less than 1, no search results");
+        Assert.assertEquals(response.jsonPath().get("currencyCode"),"SAR", "Incorrect currency returned"); // Validate currency is not SAR
+        Assert.assertTrue((int) response.jsonPath().get("totalCount") >= 1, "totalCount is less than 1, no search results"); // validate that API returned search results
     }
 }
